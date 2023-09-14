@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "tsc --noEmit false",
-    "dev": "tsc-watch --onSuccess \"node ./dist/generator.js ./demo/openapi.yml ./demo/openapi.ts\"",
+    "dev": "tsc-watch --onSuccess \"node ./dist/generator.js ./demo/thing.yaml ./demo/thing.ts\"",
     "test": "ava ./tests/generator.test.ts"
   },
   "ava": {
@@ -31,17 +31,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@readme/openapi-parser": "^2.3.0",
-    "prettier": "^2.7.1"
+    "@readme/openapi-parser": "^2.5.0",
+    "prettier": "^3.0.3"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "@types/prettier": "^2.7.1",
-    "ava": "^5.1.0",
-    "openapi-types": "^12.0.2",
+    "@types/node": "^20.6.0",
+    "@types/prettier": "^3.0.0",
+    "ava": "^5.3.1",
+    "openapi-types": "^12.1.3",
     "ts-node": "^10.9.1",
-    "tsc-watch": "^6.0.0",
-    "typescript": "^4.6.4"
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.2.2"
   },
   "volta": {
     "node": "19.0.1"

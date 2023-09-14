@@ -13,7 +13,8 @@ try {
   const apiSchema = await OpenAPI.parse(yamlFile) as OpenAPIV3_1.Document;
   const options = new SchemaParser(apiSchema)
   const code = options.convertToCode()
-  writeFileSync(tsFile, format(code, { semi: false, parser: "typescript" }))
+  const res = await format(code, { semi: false, parser: "typescript" })
+  writeFileSync(tsFile, res)
   process.stdout.write(`${tsFile} created with success`)
   process.exit(0)
 }

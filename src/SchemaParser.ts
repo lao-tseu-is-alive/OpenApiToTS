@@ -225,11 +225,13 @@ export type APIResponse<
       }
 
       if ('application/json' in item) {
-        return this.itemToNode(item['application/json']['schema']).with(infos)
+        const val = item['application/json']
+        // @ts-ignore
+        return this.itemToNode(val['schema'] as Schema).with(infos)
       }
 
       if ('in' in item && 'schema' in item) {
-        return this.itemToNode(item['schema']).with(infos)
+        return this.itemToNode(item['schema'] as Schema).with(infos)
       }
 
       if ('$ref' in item && item.$ref) {
